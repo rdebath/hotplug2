@@ -1,6 +1,6 @@
 # vim:set sw=8 nosta:
 
-BINS=worker_example.so worker_single.so worker_fork.so
+BINS=worker_single.so worker_fork.so
 SUBDIRS=
 DESTDIR=
 
@@ -19,3 +19,7 @@ worker_fork.so: ../action.o ../uevent.o ../xmemutils.o \
 		  ../rules/expression.o ../rules/execution.o ../rules/command.o
 
 include ../common.mak
+
+ifndef STATIC_WORKER
+  CFLAGS += $(FPIC)
+endif
