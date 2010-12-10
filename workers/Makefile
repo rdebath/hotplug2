@@ -8,6 +8,7 @@ DESTDIR=
 all: $(BINS)
 
 install:
+	$(INSTALL_BIN) -d $(DESTDIR)/lib/hotplug2/
 	$(INSTALL_BIN) $(BINS) $(DESTDIR)/lib/hotplug2/
 
 worker_single.so: ../action.o ../uevent.o ../xmemutils.o \
