@@ -1,0 +1,5 @@
+Hotplug2 is a lightweight udev replacement, responsible for exporting Linux kernel uevents into the userspace and allowing users to write simple rules for their processing. Development is focused on very small binary footprint, as well as fast runtime, rather than feature-richness. This makes it a perfect candidate for embedded devices and other environments with severely limited resources.
+
+The binary is (x86, dynamically linked against glibc) 18 KiB with -Os (v0.9). Yet it includes ability to parse rules and execute actions accordingly. It basically takes the best from both worlds -- the flexibility of udev with the distributing events design of hotplug. It can be used to create devices or to just load modules (which is it's primary goal).
+
+One of the most notable users is [OpenWRT](http://openwrt.org/)
